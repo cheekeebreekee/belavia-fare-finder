@@ -1,6 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { 
+  getRoutes, 
+  getApiKey, 
+  getFlightData, 
+  } from './api'; 
+  
+  // console.log(getFlightData({ 
+  // "currency": "BYN", 
+  // "searchRoutes": [{ 
+  // "origin": "MSQ", 
+  // "destination": "MOW", 
+  // "departing": "2018-12-25", 
+  // "direction": 0 
+  // }], 
+  // "passengerQuantities": [{ 
+  // "code": "ADT", 
+  // "quantity": 5 
+  // }] 
+  // })); 
+  console.log(getRoutes());
 
 class App extends Component {
   render() {
