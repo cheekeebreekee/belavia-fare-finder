@@ -10,6 +10,7 @@ export const getRoutes = async () => {
         {
             method: "GET",
             headers: defaultHeaders,
+            mode: 'no-cors'
         }
     );
     let result = await response;
@@ -40,6 +41,7 @@ export const getFlightData = async (options) => {
                 "Authorization": `Bearer ${apiKey}`,
             }),
             body: options,
+            mode: 'no-cors'
         }
     );
     let result = await response.json();
