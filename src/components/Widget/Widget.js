@@ -9,37 +9,45 @@ import './styles.css';
 const destinations = [
   {
     airportName: 'Амстердам (AMS), NL',
+    code: 'AMS',
   },
   {
     airportName: 'Париж (PAR), FR',
+    code: 'PAR',
   },
   {
     airportName: 'Барселона (BCN), ES',
+    code: 'BCN',
   },
   {
     airportName: 'Берлин (BER), DE',
+    code: 'BER',
   },
   {
     airportName: 'Санкт-Петербург (LED), RU',
+    code: 'LED',
   },
   {
     airportName: 'Тель-Авив (TLV), IL',
+    code: 'TLV',
   },
 ];
 
 class Widget extends Component {
   state = {
     origin: 'Минск (MSQ), BE',
+    originCode: 'MSQ',
     destination: '',
+    destinationCode: '',
     start: '2019-01-01',
     end: '2019-08-08',
   };
 
   _submitForm = e => {
     e.preventDefault();
-    const { origin, destination, start, end } = this.state;
+    const { originCode, destinationCode, start, end } = this.state;
 
-    getFares({ origin, destination, start, end })
+    getFares({ origin: originCode, destination: destinationCode, start, end })
       .then(console.log);
   }
 
@@ -47,9 +55,10 @@ class Widget extends Component {
 
   onSelect = data => {
     if (data) {
-      const { name, airportName: value } = data;
+      const { name, airportName: value, code } = data;
 
       this._setValue(name, value);
+      this._setValue(`${name}Code`, code);
     }
   };
 

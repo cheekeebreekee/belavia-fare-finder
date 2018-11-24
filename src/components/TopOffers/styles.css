@@ -6,3 +6,60 @@ h2 {
   letter-spacing: 0.25px;
   line-height: 27px;
 }
+
+.top-offers-container {
+  margin: 0 0 30px 0;
+}
+
+.row-5 {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.row-5 .card {
+  width: calc((100% - 120px) / 5);
+  margin-bottom: 30px;
+  margin-right: 30px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,.1);
+}
+
+.row-5 .card:nth-child(5n) {
+  margin-right: 0;
+}
+
+.row-5 .card .picture {
+  min-height: 80px;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.row-5 .card .content {
+  padding: 5px;
+  text-align: center;
+}
+
+.row-5 .card p {
+  margin: 0;
+}
+
+.row-5 .card .country {
+  font-size: 15px;
+  margin-bottom: 5px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+}
+
+.row-5 .card .price {
+  position: relative;
+  font-size: 24px;
+  color: #46b1c9;
+  margin: 0;
+}
+
+.row-5 .card .price span {
+  font-size: 15px;
+  position: relative;
+  top: -15px;
+}

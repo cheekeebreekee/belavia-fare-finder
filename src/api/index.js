@@ -53,11 +53,11 @@ export const getFares = ({ origin='MSQ', destination, start='2019-01-01', end })
         method: "POST",
         body: JSON.stringify({
             "date": {
-                "start": start,
-                "end": end,
+                start,
+                end,
             },
-            "origin": origin,
-            "destination": destination,
+            origin,
+            destination,
         }),
         
     })
