@@ -41,17 +41,18 @@ class Calendar extends Component {
                     isOutsideRange={isDayOutOfBounds}
                     displayFormat={"DD-MM-YYYY"}
                     showDefaultInputIcon
-                    appendToBody
+                    hideKeyboardShortcutsPanel
+                    calendarInfoPosition={"bottom"}
                 />
             </div>
         )
     }
 
     getDateRange() {
-        return [
-            this.state.startDate,
-            this.state.endDate,
-        ]
+        return {
+            "start": this.props.startDate.format("YYYY-MM-DD"),
+            "end": this.props.endDate.format("YYYY-MM-DD")
+        }
     }
 }
 
