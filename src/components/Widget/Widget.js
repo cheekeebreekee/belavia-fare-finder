@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import QuantityInput from './../QuantityInput';
 import { Button } from 'primereact/button';
 
 import AutoCompleteField from '../AutoCompleteField/AutoCompleteField';
@@ -69,6 +70,7 @@ class Widget extends Component {
           onChange={this.onChange}
           destinations={destinations}
         />
+        <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
         <Button
           label='Найти'
           className="p-button-raised p-button-success widget__search-btn"

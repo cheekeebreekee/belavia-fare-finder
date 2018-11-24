@@ -8,13 +8,11 @@ class SearchTable extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="input-wrapper">
-                <label className="input-label" htmlFor="quantity">Quantity</label>
+                <label className="input-label">{this.props.labelText}</label>
                 <InputText
-                    id="quantity"
-                    keyfilter={/^[1-5]{1}$/}
+                    keyfilter={this.props.pattern}
                     maxLength={1}
                     value={this.state.quantity}
                     onChange={(e) => this.setState({ quantity: e.target.value })}
