@@ -10,10 +10,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.content {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 header {
   height: 123px;
   background-image: url(./img/header.PNG);
   background-size: cover;
+}
+
+.content-container {
+  margin: 0 143px 0 190px;
 }
 
 code {
