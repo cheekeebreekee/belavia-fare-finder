@@ -84,11 +84,11 @@ class Widget extends Component {
           onChange={this.onChange}
           destinations={destinations}
         />
-        <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
         <Button
           label='Найти'
           className="p-button-raised p-button-success widget__search-btn"
         />
+        <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
       </form>
     );
   }
