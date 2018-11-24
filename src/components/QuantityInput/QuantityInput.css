@@ -1,9 +1,33 @@
 .input-wrapper {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
 }
 
 .input-label {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  color: #fff;
+  position: absolute;
+  font-size: 10px;
+  left: 14px;
+}
+
+.input-wrapper .p-inputtext {
+  font-size: 14px;
+  padding: 12px 15px 7px 15px;
+  background-color: #5FA2E3;
+  border: 0;
+  color: #fff;
+  width: 295px;
+  border-bottom: 1px solid #fff;
+}
+
+body .p-inputtext:enabled:hover:not(.p-error) {
+  border-bottom: 1px solid #fff;
+}
+
+.input-wrapper .p-inputtext:enabled:focus:not(.p-error) {
+  border-bottom: 1px solid #fff;
 }

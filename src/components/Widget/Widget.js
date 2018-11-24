@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import QuantityInput from './../QuantityInput';
 import AutoCompleteField from '../AutoCompleteField/AutoCompleteField';
 import './styles.css';
 
@@ -68,6 +68,7 @@ class Widget extends Component {
           onChange={this.onChange}
           destinations={destinations}
         />
+        <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
       </form>
     );
   }
