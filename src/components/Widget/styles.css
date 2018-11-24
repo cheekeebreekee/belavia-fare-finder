@@ -1,8 +1,22 @@
 .widget {
-  max-width: 1100px;
-  margin: 10px auto;
-  padding: 52px;
-  border-radius: 12px;
-  background-color: #4E65A6;
+  margin: 0 auto 10px auto;
+  padding: 44px 171px 57px 152px;
+  background-color: #529BE1;
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+}
+
+.widget .widget__search-btn {
+  background-color: #77CA27 !important;
+  padding: 17px 35px;
+  font-family: "Open Sans";
+  font-size: 13.82px;
+  letter-spacing: 1.25px;
+  line-height: 16px;
+  text-align: center;
+  border: none !important;
+  vertical-align: top;
+}
+
+.widget__search-btn .p-button-text {
+  padding: 0 !important;
 }
