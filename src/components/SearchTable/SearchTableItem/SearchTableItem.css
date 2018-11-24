@@ -1,0 +1,49 @@
+td {
+  padding: 25px 30px;
+}
+
+.search-table-item {
+  border-bottom: 1px solid #ccc;
+}
+
+td.search-table-item__price {
+  font-size: 24px;
+}
+
+.search-table-item__direction {
+  font-size: 20px;
+  color: #4E65A6;
+}
+
+.search-table-item__time {
+  font-size: 14px;
+  color: #6D6D6D;
+}
+
+.search-table-item__departure {
+  padding: 3px 8px;
+
+}
+
+.search-table-item__departure.is-holiday {
+  background-color: rgb(82, 155, 225, .4);
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.search-table-item__flight-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search-table-item__flight-time {
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.search-table-item__transfer-count {
+  color: rgba(102,102,102,0.6);
+  font-size: 14px;
+}
