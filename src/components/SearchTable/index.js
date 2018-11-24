@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './SearchTable.css';
 import SearchTableItem from './SearchTableItem';
-import { getFares } from '../../api';
 
 const results = [
     {
@@ -72,21 +71,6 @@ const results = [
     }
 ];
  class SearchTable extends Component {
-     constructor(props) {
-         super(props);
-
-         this.state = {
-             flights: {}
-         }
-     }
-
-    componentDidMount() {
-        getFares('AMS')
-        .then((data) => this.setState({
-            flights: data
-        }));
-    }
-
     getWeatherInCities = async (data) => {
         for (const item of data) {
             let response = await fetch(`api.openweathermap.org/data/2.5/weather?q=${item.direction}`);
@@ -98,8 +82,6 @@ const results = [
     }
     
   render() {
-    const { flights } = this.state;
-    console.log(flights);
     return (
       <table className="search-table">
         {

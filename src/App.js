@@ -4,16 +4,23 @@ import './components/SearchTable'
 import SearchTable from './components/SearchTable';
 import Calendar from './components/Calendar';
 
-import { Widget } from './components';
+import { Widget, Offers, TopOffers } from './components';
 
 class App extends Component {
+
+
   render() {
     return (
-      <main>
-        <Widget />
-        <Calendar />
-        <SearchTable />
-      </main>
+      <div>
+        <header />
+        <main>
+          <Widget />
+          <Offers />
+          <Calendar />
+          <SearchTable />
+          <TopOffers />
+        </main>
+      </div>
     );
   }
 }

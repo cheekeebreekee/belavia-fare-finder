@@ -48,15 +48,16 @@ export const getFlightData = async (options) => {
     return result;
 };
 
-export const getFares = (destination) => {
+export const getFares = ({ origin='MSQ', destination, start='2019-01-01', end }) => {
     return fetch(`https://farefinder.herokuapp.com/search/fare`, {
         method: "POST",
         body: JSON.stringify({
             "date": {
-                "start": "2019-01-01"
+                "start": start,
+                "end": end,
             },
-            "origin": "MSQ",
-            "destination": destination
+            "origin": origin,
+            "destination": destination,
         }),
         
     })
