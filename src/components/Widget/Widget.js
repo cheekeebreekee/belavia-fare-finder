@@ -3,7 +3,6 @@ import QuantityInput from './../QuantityInput';
 import { Button } from 'primereact/button';
 
 import AutoCompleteField from '../AutoCompleteField/AutoCompleteField';
-import { getFares } from '../../api';
 import './styles.css';
 
 const destinations = [
@@ -45,10 +44,10 @@ class Widget extends Component {
 
   _submitForm = e => {
     e.preventDefault();
+    const { onSearch } = this.props;
     const { originCode, destinationCode, start, end } = this.state;
 
-    getFares({ origin: originCode, destination: destinationCode, start, end })
-      .then(console.log);
+    onSearch({ origin: originCode, destination: destinationCode, start, end });
   }
 
   _setValue = (name, value) => this.setState({ [name]: value })
