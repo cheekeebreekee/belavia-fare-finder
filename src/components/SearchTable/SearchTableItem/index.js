@@ -1,12 +1,25 @@
 import React from "react";
+import './SearchTableItem.css';
+import sun from './assets/sun.svg'
+import swim from './assets/swim.svg'
+import museum from './assets/museum.svg'
 
 export default ({ data }) => (
-    <div className="search-table-item">
-        <span className="search-table-item__direction">{data.direction}</span>
-        <span className="search-table-item__price">{data.price}</span>
-        <span className="search-table-item__time">{data.timeInFlight}</span>
-        <span className="search-table-item__date">{data.date}</span>
-        <span className="search-table-item__quantity">{data.quantity}</span>
-        <span className="search-table-item__quantity">{data.ticketType}</span>
-    </div>
-)
+   <tr title={data.direction} subTitle={`${data.price} BYN`} className="search-table-item">
+       <td className="search-table-item__price">{data.price} BYN</td>
+       <td className="search-table-item__direction">{data.direction}</td>
+       <td className="search-table-item__time">
+        <span className={`search-table-item__departure ${data.isHoliday ? 'is-holiday' : ''}`}>{data.departure}</span>
+        {data.isHoliday && <span className="search-table-item__holiday-name">Hanuka</span>}
+        </td>
+       <td className="search-table-item__flight-info">
+            <span className="search-table-item__flight-time">{data.timeInFlight}</span>
+            <span className="search-table-item__transfer-count">
+                {
+                    !!data.transferCount ? `${data.transferCount} transfers` : `direct flight`
+                }
+            </span>
+       </td>
+       <td className="search-table-item__quantity"><img src={sun} /></td>
+   </tr>
+) 

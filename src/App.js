@@ -6,9 +6,9 @@ import SearchTable from './components/SearchTable';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <main>
         <SearchTable />
-      </div>
+      </main>
     );
   }
 }
