@@ -1,0 +1,50 @@
+h2 {
+  color: #4E65A6;
+  font-family: "Open Sans";
+  font-size: 19.74px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  line-height: 27px;
+}
+
+.content-section {
+  margin-left: 190px;
+}
+
+.content-section .p-selectbutton .p-button {
+  margin-right: 12px;
+  padding: 7px 15px;
+  border-radius: 8px !important;
+  background-color: rgba(207,233,252,0.23) !important;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1), 0 4px 16px 0 rgba(0,0,0,0.1);
+}
+
+.content-section .p-selectbutton .p-button.p-highlight {
+  border: 2px solid #4E65A6;
+  border-radius: 8px;
+  background-color: #F8F8F8;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1), 0 4px 16px 0 rgba(0,0,0,0.1);
+}
+
+.content-section .p-selectbutton .p-button span {
+  color: #455CC7;
+  font-family: "Open Sans";
+  font-size: 17px;
+  letter-spacing: 0.22px;
+  text-align: center;
+  padding: 0;
+}
+
+.content-section-more {
+  color: #ACACAC;
+  font-family: "Open Sans";
+  font-size: 18px;
+  letter-spacing: 0.23px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.content-section-text {
+  display: flex;
+  align-items: center;
+}

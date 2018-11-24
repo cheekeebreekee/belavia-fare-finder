@@ -3,6 +3,7 @@ import QuantityInput from './../QuantityInput';
 import { Button } from 'primereact/button';
 
 import AutoCompleteField from '../AutoCompleteField/AutoCompleteField';
+import { getFares } from '../../api';
 import './styles.css';
 
 const destinations = [
@@ -28,9 +29,19 @@ const destinations = [
 
 class Widget extends Component {
   state = {
-    origin: 'Минск, Беларусь',
+    origin: 'Минск (MSQ), BE',
     destination: '',
+    start: '2019-01-01',
+    end: '2019-08-08',
   };
+
+  _submitForm = e => {
+    e.preventDefault();
+    const { origin, destination, start, end } = this.state;
+
+    getFares({ origin, destination, start, end })
+      .then(console.log);
+  }
 
   _setValue = (name, value) => this.setState({ [name]: value })
 
@@ -52,14 +63,17 @@ class Widget extends Component {
     const { origin, destination } = this.state;
 
     return (
-      <form className='widget'>
+      <form
+        className='widget'
+        onSubmit={this._submitForm}
+      >
         <AutoCompleteField
           name='origin'
           placeholder='откуда'
           value={origin}
           onSelect={this.onSelect}
           onChange={this.onChange}
-          destinations={destinations}
+          destinations={[]}
           extraClass='widget__current-location'
         />
         <AutoCompleteField
@@ -70,11 +84,11 @@ class Widget extends Component {
           onChange={this.onChange}
           destinations={destinations}
         />
-        <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
         <Button
           label='Найти'
           className="p-button-raised p-button-success widget__search-btn"
         />
+        <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
       </form>
     );
   }

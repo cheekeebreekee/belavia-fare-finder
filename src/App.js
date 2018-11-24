@@ -5,18 +5,25 @@ import SearchTable from './components/SearchTable';
 import Calendar from './components/Calendar';
 import { getFares } from './api';
 
-import { Widget } from './components';
+import { Widget, Offers, TopOffers } from './components';
 
 console.log(getFares("LON"));
 
 class App extends Component {
+
+
   render() {
     return (
-      <main>
-        <Widget />
-        <Calendar />
-        <SearchTable />
-      </main>
+      <div>
+        <header />
+        <main>
+          <Widget />
+          <Offers />
+          <Calendar />
+          <SearchTable />
+          <TopOffers />
+        </main>
+      </div>
     );
   }
 }
