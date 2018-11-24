@@ -90,9 +90,17 @@ const results = [
                 <SearchTableItem key={i} data={el} />
             ))
         }
+<<<<<<< HEAD
       </table>
     );
   }
 }
 
 export default SearchTable;
+=======
+      </div>
+    );
+  }
+}
+ export default SearchTable;
+>>>>>>> dev
