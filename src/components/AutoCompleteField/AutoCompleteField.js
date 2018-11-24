@@ -33,13 +33,14 @@ class AutoCompleteField extends Component {
 
   render() {
     const { suggestions } = this.state;
-    const { name, onChange, value, placeholder, extraClass } = this.props;
+    const { name, onChange, value, placeholder, extraClass, dropdown } = this.props;
 
     return (
       <span className='widget__field'>
         <AutoComplete
           inputClassName={`${className} ${extraClass}`}
           name={name}
+          dropdown={dropdown}
           value={value}
           onChange={onChange}
           onSelect={this._onSelect}

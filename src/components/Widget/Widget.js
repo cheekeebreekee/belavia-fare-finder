@@ -46,25 +46,27 @@ class Widget extends Component {
     e.preventDefault();
     const { onSearch } = this.props;
     const { originCode, destinationCode, start, end } = this.state;
-
+    console.log(destinationCode);
     onSearch({ origin: originCode, destination: destinationCode, start, end });
   }
 
   _setValue = (name, value) => this.setState({ [name]: value })
 
   onSelect = data => {
-    if (data) {
-      const { name, airportName: value, code } = data;
+    // debugger;
+    // if (data) {
+    //   const { name, airportName: value, code } = data;
 
-      this._setValue(name, value);
-      this._setValue(`${name}Code`, code);
-    }
+    //   this._setValue(name, value);
+    //   this._setValue(`${name}Code`, code);
+    // }
   };
 
   onChange = e => {
-    const { value, target: { name } } = e;
+    const { target: { name, value: { airportName, code } }} = e;
 
-    this._setValue(name, value);
+    this._setValue(name, airportName);
+    this._setValue(`${name}Code`, code);
   };
 
   render() {
@@ -73,7 +75,7 @@ class Widget extends Component {
     return (
       <form
         className='widget'
-        onSubmit={this._submitForm}
+        // onSubmit={this._submitForm}
       >
         <AutoCompleteField
           name='origin'
@@ -88,6 +90,7 @@ class Widget extends Component {
           name='destination'
           placeholder='куда'
           value={destination}
+          dropdown
           onSelect={this.onSelect}
           onChange={this.onChange}
           destinations={destinations}
@@ -95,6 +98,7 @@ class Widget extends Component {
         <Button
           label='Найти'
           className="p-button-raised p-button-success widget__search-btn"
+          onClick={this._submitForm}
         />
         <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
       </form>
