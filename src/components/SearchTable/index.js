@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './SearchTable.css';
 import SearchTableItem from './SearchTableItem';
+import { getFares } from '../../api';
 
 const results = [
     {
@@ -53,7 +54,24 @@ const results = [
     }
 ];
  class SearchTable extends Component {
+     constructor(props) {
+         super(props);
+
+         this.state = {
+             flights: {}
+         }
+     }
+
+    componentDidMount() {
+        getFares('AMS')
+        .then((data) => this.setState({
+            flights: data
+        }));
+    }
+
   render() {
+      const { flights } = this.state;
+      console.log(flights);
     return (
       <div className="search-table">
         {
