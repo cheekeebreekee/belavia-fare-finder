@@ -1,0 +1,40 @@
+.widget__field {
+  position: relative;
+  margin-right: 4px;
+}
+
+.widget__field-placeholder {
+  position: absolute;
+  color: #FFFFFF;
+  z-index: 2;
+  left: 14px;
+  font-family: "Open Sans";
+  font-size: 11.85px;
+}
+
+.widget .widget__auto-complete-field {
+  overflow: hidden;
+  font-weight: normal;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all 0.2s ease;
+  background: #41548A;
+  border: 1px solid #666 !important;
+  border-bottom: 1px solid #FFFFFF !important;
+  border-radius: 3px;
+  color: #FFFFFF;
+  font-family: "Open Sans";
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  padding-top: 15px !important;
+}
+
+.widget .widget__auto-complete-field:focus {
+  border: 1px solid #666 !important;
+}
+
+.widget .p-autocomplete-panel {
+  margin-top: 5px;
+  border-radius: 1px;
+}
