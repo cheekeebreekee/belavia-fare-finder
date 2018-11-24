@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'primereact/button';
 
 import AutoCompleteField from '../AutoCompleteField/AutoCompleteField';
 import './styles.css';
@@ -34,7 +35,7 @@ class Widget extends Component {
 
   onSelect = data => {
     if (data) {
-      const { name, airportName: value, notResults } = data;
+      const { name, airportName: value } = data;
 
       this._setValue(name, value);
     }
@@ -67,6 +68,10 @@ class Widget extends Component {
           onSelect={this.onSelect}
           onChange={this.onChange}
           destinations={destinations}
+        />
+        <Button
+          label='Найти'
+          className="p-button-raised p-button-success widget__search-btn"
         />
       </form>
     );
