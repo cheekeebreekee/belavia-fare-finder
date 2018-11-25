@@ -84,6 +84,8 @@ class App extends Component {
     }
   }
 
+  searchTable = ref => this.table = ref;
+
   onSearch = (options) => {
     getFares(options)
     .then(data => data.sort((a, b) => a.flightInfo[0].price - b.flightInfo[0].price))
@@ -102,9 +104,14 @@ class App extends Component {
         "transferCount": 0
       }
     }))
-    .then(data => this.setState({
-      flights: data
-    }))
+    .then(data => {
+      if (this.table) {
+        this.table.scrollIntoView();
+      }
+      this.setState({
+        flights: data
+      })
+    })
   }
 
   render() {
@@ -117,9 +124,12 @@ class App extends Component {
         <main>
           <Widget onSearch={this.onSearch}/>
           <div className="content-container">
-            <Offers />
-            <SearchTable results={flights} />
             <TopOffers />
+            <Offers />
+            <SearchTable
+              refTable={this.searchTable}
+              results={flights}
+            />
           </div>
         </main>
       </div>

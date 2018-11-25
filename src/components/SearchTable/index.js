@@ -14,10 +14,13 @@ import SearchTableItem from './SearchTableItem';
     }
     
   render() {
-    const { results } = this.props;
+    const { results, refTable } = this.props;
 
     return (
-      <table className="search-table">
+      <table
+        ref={refTable}
+        className="search-table"
+      >
         {
             results.map((el, i) =>(
                 <SearchTableItem key={i} data={el} />
