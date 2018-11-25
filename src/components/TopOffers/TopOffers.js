@@ -5,7 +5,7 @@ import './styles.css';
 const offers = [
   {
     backgroundImage: 'http://kidpassage.com/images/publications/images/1675_Barselona-v-yanvare-01.jpg',
-    country: 'Барселона',
+    country: 'Барселону',
     price: '197',
   },
   {
@@ -32,22 +32,14 @@ const offers = [
     date: 'в марте',
   },
   {
-    backgroundImage: 'https://images.pexels.com/photos/618079/pexels-photo-618079.jpeg?cs=srgb&dl=architectural-design-architecture-buildings-618079.jpg&fm=jpg',
-    country: 'Тель-Авив',
-    price: '227',
-    date: 'в апреле',
+    backgroundImage: 'http://kidpassage.com/images/publications/images/1675_Barselona-v-yanvare-01.jpg',
+    country: 'Барселону',
+    price: '197',
   },
   {
-    backgroundImage: 'https://cdn2.tu-tu.ru/image/source/1/61446363738e703bc8f63edc7df224cc/',
-    country: 'Санкт-Петербург',
-    price: '127',
-    date: 'в мае',
-  },
-  {
-    backgroundImage: 'https://cdn2.tu-tu.ru/image/source/1/61446363738e703bc8f63edc7df224cc/',
-    country: 'Санкт-Петербург',
-    price: '127',
-    date: 'в июне',
+    backgroundImage: 'https://cdn2.tu-tu.ru/image/source/1/8a4d347c03b9ea0272dfc0edcf902f19/',
+    country: 'Амстердам',
+    price: '287',
   },
 ];
 
@@ -74,7 +66,7 @@ class TopOffers extends PureComponent {
         </section>
         <section className="row-5">
           {
-            offers.slice(3).map(props => <Offer {...props} />)
+            offers.slice(2, 7).map(props => <Offer {...props} />)
           }
         </section>
       </div>
