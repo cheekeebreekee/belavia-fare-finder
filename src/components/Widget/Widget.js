@@ -30,6 +30,10 @@ const destinations = [
     airportName: 'Тель-Авив (TLV), IL',
     code: 'TLV',
   },
+  {
+    airportName: 'Прага (PRG), CZE',
+    code: 'PRG',
+  },
 ];
 
 class Widget extends Component {
@@ -53,20 +57,18 @@ class Widget extends Component {
   _setValue = (name, value) => this.setState({ [name]: value })
 
   onSelect = data => {
-    // debugger;
-    // if (data) {
-    //   const { name, airportName: value, code } = data;
+    if (data) {
+      const { name, airportName: value, code } = data;
 
-    //   this._setValue(name, value);
-    //   this._setValue(`${name}Code`, code);
-    // }
+      this._setValue(name, value);
+      this._setValue(`${name}Code`, code);
+    }
   };
 
   onChange = e => {
-    const { target: { name, value: { airportName, code } }} = e;
+    const { target: { name, value }} = e;
 
-    this._setValue(name, airportName);
-    this._setValue(`${name}Code`, code);
+    this._setValue(name, value);
   };
 
   render() {
@@ -75,13 +77,13 @@ class Widget extends Component {
     return (
       <form
         className='widget'
-        // onSubmit={this._submitForm}
+        onSubmit={this._submitForm}
       >
         <AutoCompleteField
           name='origin'
           placeholder='откуда'
           value={origin}
-          onSelect={this.onSelect}
+          onSelect={() => {}}
           onChange={this.onChange}
           destinations={[]}
           extraClass='widget__current-location'
@@ -99,7 +101,6 @@ class Widget extends Component {
         <Button
           label='Найти'
           className="p-button-raised p-button-success widget__search-btn"
-          onClick={this._submitForm}
         />
         <QuantityInput labelText="Quantity" pattern={/^[1-5]{1}$/} />
       </form>
