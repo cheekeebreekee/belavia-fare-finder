@@ -5,6 +5,13 @@
   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
 }
 
+.widget .widget__auto-complete-field {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: 2px solid #fff !important;
+}
+
 .widget .widget__search-btn {
   background-color: #77CA27 !important;
   padding: 17px 35px;
