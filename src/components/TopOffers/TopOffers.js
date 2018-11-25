@@ -35,11 +35,13 @@ const offers = [
     backgroundImage: 'http://kidpassage.com/images/publications/images/1675_Barselona-v-yanvare-01.jpg',
     country: 'Барселону',
     price: '197',
+    date: 'в апреле',
   },
   {
     backgroundImage: 'https://cdn2.tu-tu.ru/image/source/1/8a4d347c03b9ea0272dfc0edcf902f19/',
     country: 'Амстердам',
     price: '287',
+    date: 'в мае',
   },
 ];
 
