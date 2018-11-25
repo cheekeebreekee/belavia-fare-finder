@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './index.css';
 import './components/SearchTable'
 import SearchTable from './components/SearchTable';
-import Calendar from './components/Calendar';
 
 import { Widget, Offers, TopOffers } from './components';
 import { getFares } from './api';
@@ -119,7 +118,6 @@ class App extends Component {
           <Widget onSearch={this.onSearch}/>
           <div className="content-container">
             <Offers />
-            <Calendar />
             <SearchTable results={flights} />
             <TopOffers />
           </div>

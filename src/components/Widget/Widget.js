@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import QuantityInput from './../QuantityInput';
 import { Button } from 'primereact/button';
-
+import Calendar from './../Calendar';
 import AutoCompleteField from '../AutoCompleteField/AutoCompleteField';
 import './styles.css';
 
@@ -95,6 +95,7 @@ class Widget extends Component {
           onChange={this.onChange}
           destinations={destinations}
         />
+        <Calendar/>
         <Button
           label='Найти'
           className="p-button-raised p-button-success widget__search-btn"
