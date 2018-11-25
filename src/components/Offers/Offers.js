@@ -15,9 +15,11 @@ class Offers extends PureComponent {
   };
 
   render() {
+    const { refTable } = this.props;
+
     return (
       <div className="content-section implementation">
-        <h2>Чем хотите заниматься?</h2>
+        <h2 ref={refTable}>Чем хотите заниматься?</h2>
         <div className="content-section-text">
           <SelectButton
             multiple={true}
@@ -25,7 +27,6 @@ class Offers extends PureComponent {
             options={activities}
             onChange={(e) => this.setState({value: e.value})}
           />
-          <span className="content-section-more">Хотите больше? Напишите нам</span>
         </div>
       </div>
     );

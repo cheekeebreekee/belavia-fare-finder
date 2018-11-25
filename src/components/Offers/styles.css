@@ -43,4 +43,6 @@ h2 {
 .content-section-text {
   display: flex;
   align-items: center;
+  margin: o auto;
+  width: fit-content;
 }

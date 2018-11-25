@@ -106,7 +106,7 @@ class App extends Component {
     }))
     .then(data => {
       if (this.table) {
-        this.table.scrollIntoView();
+        setTimeout(() => this.table.scrollIntoView(), 100);
       }
       this.setState({
         flights: data
@@ -120,16 +120,12 @@ class App extends Component {
 
     return (
       <div className="content">
-        <header />
         <main>
           <Widget onSearch={this.onSearch}/>
           <div className="content-container">
             <TopOffers />
-            <Offers />
-            <SearchTable
-              refTable={this.searchTable}
-              results={flights}
-            />
+            <Offers refTable={this.searchTable} />
+            <SearchTable results={flights} />
           </div>
         </main>
       </div>
