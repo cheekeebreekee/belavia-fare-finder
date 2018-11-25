@@ -49,7 +49,7 @@ export const getFlightData = async (options) => {
 };
 
 export const getFares = ({ origin='MSQ', destination, start='2019-01-01', end }) => {
-    return fetch(`http://EPBYMINW2072.minsk.epam.com:3000/search/fare`, {
+    return fetch(`https://farefinder.herokuapp.com/search/fare`, {
         method: "POST",
         body: JSON.stringify({
             "date": {
